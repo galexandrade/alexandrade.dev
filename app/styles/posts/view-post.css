@@ -1,115 +1,115 @@
 .view-post {
-  padding-top: 5rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
+    padding-top: 5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
 
 .view-post > a {
-  text-decoration: none;
-  font-size: 15pt;
-  color: var(--color-foreground);
+    text-decoration: none;
+    font-size: 15pt;
+    color: var(--color-foreground);
 }
 
 .view-post > a span {
-  display: block;
-  float: left;
-  margin-top: 2px;
-  padding-right: 15px;
+    display: block;
+    float: left;
+    margin-top: 2px;
+    padding-right: 15px;
 }
 
 .view-post > a:hover {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .view-post > h1 {
-  padding-top: 2rem;
+    padding-top: 2rem;
 }
 
 .view-post__date {
-  font-weight: 500;
-  font-size: 1.375rem;
-  margin-top: 1.5rem;
-  color: var(--color-foreground-alt);
+    font-weight: 500;
+    font-size: 1.375rem;
+    margin-top: 1.5rem;
+    color: var(--color-foreground-alt);
 }
 
 .view-post__content {
-  margin-top: 4rem;
+    margin-top: 4rem;
 }
 
 .view-post__content p {
-  font-size: 1.125rem;
-  line-height: 1.75;
-  color: var(--color-foreground-alt);
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--color-foreground-alt);
 }
 
 .view-post__content > * {
-  margin-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 ol li,
 ul li {
-  margin-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
 }
 
 .view-post__content > h2 {
-  margin-top: 6rem;
+    margin-top: 6rem;
 }
 
 img {
-  max-width: 100%;
-  border-radius: 15px;
+    max-width: 100%;
+    border-radius: 15px;
 }
 
 pre {
-  background-color: var(--color-background-alt);
-  border-radius: 0.5rem;
-  padding: 20px;
+    background-color: var(--color-background-alt);
+    border-radius: 0.5rem;
+    padding: 20px;
 }
 
 blockquote {
-  border-left: 5px solid var(--color-foreground-alt);
-  padding: 0.5rem 1rem;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-style: italic;
+    border-left: 5px solid var(--color-foreground-alt);
+    padding: 0.5rem 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-style: italic;
 }
 
 /** Post author */
 .post-author {
-  border-top: 3px solid var(--color-background-alt);
-  display: flex;
-  padding-top: 2rem;
-  margin-top: 8rem;
+    border-top: 3px solid var(--color-background-alt);
+    display: flex;
+    padding-top: 2rem;
+    margin-top: 8rem;
 }
 
 .post-author h2 {
-  font-size: 16pt;
+    font-size: 16pt;
 }
 
 .post-author__image img {
-  max-width: 250px;
-  height: 250px;
-  object-fit: cover;
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
 }
 
 .post-author__info {
-  padding-left: 2rem;
-  display: flex;
-  flex-direction: column;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .post-author__info a {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 @media screen and (max-width: 768px) {
-  .view-post {
-    padding: 0;
-    padding-top: 2rem;
-  }
-  .view-post > h1 {
-    padding-top: 0;
-  }
+    .view-post {
+        padding: 0;
+        padding-top: 2rem;
+    }
+    .view-post > h1 {
+        padding-top: 0;
+    }
 }

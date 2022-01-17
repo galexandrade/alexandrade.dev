@@ -1,9 +1,9 @@
 :root {
-  --color-foreground: #fff;
-  --color-foreground-alt: #a9adc1;
-  --color-background: #1f2028;
-  --color-background-alt: #011627;
-  --color-links: #e1e3eb;
-  --color-links-hover: #f0f1f5;
-  --color-border: #fff;
+    --color-foreground: #fff;
+    --color-foreground-alt: #a9adc1;
+    --color-background: #1f2028;
+    --color-background-alt: #011627;
+    --color-links: #e1e3eb;
+    --color-links-hover: #f0f1f5;
+    --color-border: #fff;
 }

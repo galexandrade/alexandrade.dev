@@ -1,8 +1,8 @@
-import invariant from "tiny-invariant";
-import { marked } from "marked";
+import invariant from 'tiny-invariant';
+import { marked } from 'marked';
 
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
-import database from "./database";
+import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
+import database from './database';
 
 export type Post = {
     slug: string;
@@ -28,7 +28,7 @@ function isValidPostAttributes(
 }
 
 export async function getPosts() {
-    const querySnapshot = await getDocs(collection(database, "posts"));
+    const querySnapshot = await getDocs(collection(database, 'posts'));
 
     const posts: Post[] = [];
     querySnapshot.forEach((doc) => {
@@ -40,14 +40,14 @@ export async function getPosts() {
         );
         posts.push({
             slug: filename,
-            ...data
-          });
+            ...data,
+        });
     });
     return posts;
-  }
+}
 
-  export async function getPost(slug: string) {
-    const docRef = doc(database, "posts", slug);
+export async function getPost(slug: string) {
+    const docRef = doc(database, 'posts', slug);
     const docSnap = await getDoc(docRef);
     const data = docSnap.data();
 
@@ -55,8 +55,14 @@ export async function getPosts() {
         isValidPostAttributes(data),
         `Post ${slug} is missing attributes`
     );
-    
+
     // @ts-ignore dsadas
     const html = marked(data.content);
-    return { slug, html, title: data.title, date: data.date, readingtime: data.readingtime };
-  }
+    return {
+        slug,
+        html,
+        title: data.title,
+        date: data.date,
+        readingtime: data.readingtime,
+    };
+}
