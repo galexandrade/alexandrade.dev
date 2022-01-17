@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from "remix";
 import type { LoaderFunction, MetaFunction } from "remix";
 import type { LinksFunction } from "remix";
-import { getPost } from "~/post";
+import { getPost } from "~/api/post";
 import invariant from "tiny-invariant";
 import stylesUrl from "~/styles/posts/view-post.css";
 import PostAuthor from "~/components/PostAuthor";

@@ -1,11 +1,10 @@
 import { useLoaderData } from "remix";
 import type { LinksFunction, MetaFunction } from "remix";
-import { getPosts } from "~/post";
-import type { Post } from "~/post";
+import { getPosts } from "~/api/post";
+import type { Post } from "~/api/post";
 import stylesUrl from "~/styles/posts/index.css";
 import PostList from "~/components/PostList";
 import PostFeatured from "~/components/PostFeatured";
-import PostAuthor from "~/components/PostAuthor";
 
 export let links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: stylesUrl }];
