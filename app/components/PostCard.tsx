@@ -1,5 +1,5 @@
 import { Link } from 'remix';
-import type { Post } from '~/post';
+import { Post } from '~/api/post';
 
 type Props = {
     post: Post;
@@ -7,7 +7,7 @@ type Props = {
 export default function PostCard({ post }: Props) {
     return (
         <div className="posts__card">
-            <Link to={`/posts/${post.slug}`}>
+            <Link to={`./${post.slug}`}>
                 <div className="posts__card-image">
                     <img src={post.image} alt="specificity rules" />
                 </div>

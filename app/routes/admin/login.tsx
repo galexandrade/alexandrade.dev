@@ -96,7 +96,6 @@ export let meta: MetaFunction = () => {
 
 export default function Login() {
     const actionData = useActionData<ActionData>();
-    console.log(actionData);
     return (
         <div className="login">
             <form

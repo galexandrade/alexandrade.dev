@@ -1,9 +1,9 @@
 import type { LinksFunction, MetaFunction, ActionFunction } from 'remix';
 import { useActionData, json } from 'remix';
-import stylesUrl from '~/styles/admin/index.css';
-import { createPost } from '~/api/post';
+import stylesUrl from '~/styles/admin/posts.css';
 import { authenticateFirebaseFromSession } from '~/api/auth';
 import { logout } from '~/api/session';
+import AdminLayout from '~/components/AdminLayout';
 
 export let links: LinksFunction = () => {
     return [{ rel: 'stylesheet', href: stylesUrl }];
@@ -26,7 +26,6 @@ export const action: ActionFunction = async ({ request }) => {
         return logout(request);
     }
 
-    createPost();
     return badRequest({
         formError: `Form not submitted correctly.`,
     });
@@ -35,19 +34,11 @@ type ActionData = {
     formError?: string;
 };
 
-export default function Posts() {
+export default function Profile() {
     useActionData<ActionData>();
     return (
-        <div className="admin">
-            This will be the admin
-            <form method="post">
-                <button type="submit">Create post</button>
-            </form>
-            <form action="/admin/logout" method="post">
-                <button type="submit" className="button">
-                    Logout
-                </button>
-            </form>
-        </div>
+        <AdminLayout>
+            <h1>Profile</h1>
+        </AdminLayout>
     );
 }

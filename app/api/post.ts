@@ -67,13 +67,14 @@ export async function getPost(slug: string) {
     };
 }
 
-export async function createPost(slug: string = '2020-the-year-of-10x-growth') {
+export async function getRawPost(slug: string) {
     const docRef = doc(database, 'posts', slug);
     const docSnap = await getDoc(docRef);
     const data = docSnap.data();
 
-    await setDoc(doc(database, 'posts', slug), {
-        ...data,
-        featured: false,
-    });
+    return data;
+}
+
+export async function savePost(slug: string, data: Object) {
+    await setDoc(doc(database, 'posts', slug), data);
 }
