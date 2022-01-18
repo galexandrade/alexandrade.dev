@@ -36,7 +36,9 @@ export default function Posts() {
     const posts = useLoaderData<Post[]>();
     return (
         <AdminLayout>
-            <h1>Manage posts</h1>
+            <h1>
+                Manage posts <a href="/admin/posts/new">Add post</a>
+            </h1>
             <div className="posts">
                 <PostList posts={posts} />
             </div>
