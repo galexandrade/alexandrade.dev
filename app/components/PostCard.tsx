@@ -9,6 +9,12 @@ export default function PostCard({ post }: Props) {
         <div className="posts__card">
             <Link to={`./${post.slug}`}>
                 <div className="posts__card-image">
+                    <div className="card-status">
+                        {post.draft && <span className="draft">Draft</span>}
+                        {post.featured && (
+                            <span className="featured">Featured</span>
+                        )}
+                    </div>
                     <img src={post.image} alt="specificity rules" />
                 </div>
                 <div className="posts__card-info">

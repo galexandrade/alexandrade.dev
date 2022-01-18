@@ -23,6 +23,10 @@ nav ul li:last-child {
     align-self: flex-end;
 }
 
+h1 a {
+    float: right;
+}
+
 .logout-link {
     background: none;
     border: none;

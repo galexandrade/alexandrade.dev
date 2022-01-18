@@ -1,7 +1,15 @@
 import invariant from 'tiny-invariant';
 import { marked } from 'marked';
 
-import { collection, getDocs, doc, getDoc, setDoc } from 'firebase/firestore';
+import {
+    collection,
+    getDocs,
+    doc,
+    getDoc,
+    setDoc,
+    query,
+    where,
+} from 'firebase/firestore';
 import database from './database';
 
 export type Post = {
@@ -9,6 +17,7 @@ export type Post = {
     title: string;
     image: string;
     featured: boolean;
+    draft: boolean;
     date: string;
     readingtime: string;
 };
@@ -17,6 +26,7 @@ export type PostMarkdownAttributes = {
     title: string;
     image: string;
     featured: boolean;
+    draft: boolean;
     date: string;
     readingtime: string;
 };
@@ -27,7 +37,7 @@ function isValidPostAttributes(
     return attributes?.title;
 }
 
-export async function getPosts() {
+export async function getPosts(type: 'all' | 'published' = 'published') {
     const querySnapshot = await getDocs(collection(database, 'posts'));
 
     const posts: Post[] = [];
@@ -38,10 +48,13 @@ export async function getPosts() {
             isValidPostAttributes(data),
             `${filename} has bad meta data!`
         );
-        posts.push({
-            slug: filename,
-            ...data,
-        });
+        // @ts-ignore ss
+        if (type === 'all' || (type === 'published' && !data.draft)) {
+            posts.push({
+                slug: filename,
+                ...data,
+            });
+        }
     });
     return posts;
 }

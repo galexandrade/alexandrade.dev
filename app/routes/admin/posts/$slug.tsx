@@ -46,6 +46,7 @@ export const action: ActionFunction = async ({ request, params }) => {
     const readingtime = form.get('readingtime');
     const date = form.get('date');
     const featured = form.get('featured');
+    const draft = form.get('draft');
     const content = form.get('content');
 
     if (!title || !image || !readingtime || !featured || !date || !content) {
@@ -60,6 +61,7 @@ export const action: ActionFunction = async ({ request, params }) => {
         readingtime,
         date,
         featured: featured === 'yes' ? true : false,
+        draft: draft === 'yes' ? true : false,
         content,
     };
 
@@ -120,6 +122,17 @@ export default function PostSlug() {
                         id="featured-input"
                         name="featured"
                         defaultValue={post.featured ? 'yes' : 'no'}
+                    >
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label htmlFor="draft-input">Draft</label>
+                    <select
+                        id="draft-input"
+                        name="draft"
+                        defaultValue={post.draft ? 'yes' : 'no'}
                     >
                         <option value="yes">Yes</option>
                         <option value="no">No</option>

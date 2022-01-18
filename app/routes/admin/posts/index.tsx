@@ -29,7 +29,7 @@ export let meta: MetaFunction = () => {
 };
 
 export const loader = () => {
-    return getPosts();
+    return getPosts('all');
 };
 
 export default function Posts() {
@@ -37,7 +37,7 @@ export default function Posts() {
     return (
         <AdminLayout>
             <h1>
-                Manage posts <a href="/admin/posts/new">Add post</a>
+                Manage posts <a href="/admin/posts/new">+ Add post</a>
             </h1>
             <div className="posts">
                 <PostList posts={posts} />

@@ -64,6 +64,7 @@ export const action: ActionFunction = async ({ request }) => {
         date,
         featured: featured === 'yes' ? true : false,
         content,
+        draft: true,
     };
 
     // @ts-ignore fdadsa
