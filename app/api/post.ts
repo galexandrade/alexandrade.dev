@@ -1,7 +1,7 @@
 import invariant from 'tiny-invariant';
 import { marked } from 'marked';
 
-import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
+import { collection, getDocs, doc, getDoc, setDoc } from 'firebase/firestore';
 import database from './database';
 
 export type Post = {
@@ -65,4 +65,15 @@ export async function getPost(slug: string) {
         date: data.date,
         readingtime: data.readingtime,
     };
+}
+
+export async function createPost(slug: string = '2020-the-year-of-10x-growth') {
+    const docRef = doc(database, 'posts', slug);
+    const docSnap = await getDoc(docRef);
+    const data = docSnap.data();
+
+    await setDoc(doc(database, 'posts', slug), {
+        ...data,
+        featured: false,
+    });
 }

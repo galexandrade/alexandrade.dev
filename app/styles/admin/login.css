@@ -1,0 +1,38 @@
+header {
+    display: none;
+}
+
+.login {
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login form {
+    width: 500px;
+    border: 1px solid #ccc;
+    padding: 5rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    row-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.login form input {
+    width: 100%;
+    height: 3rem;
+}
+
+[aria-invalid='true'] {
+    color: hsl(356, 100%, 71%);
+    border: 1px solid;
+}
+
+.login form button {
+    width: 100%;
+    height: 3rem;
+    cursor: pointer;
+}
