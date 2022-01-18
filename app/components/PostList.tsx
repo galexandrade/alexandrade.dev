@@ -1,4 +1,4 @@
-import type { Post } from '~/post';
+import { Post } from '~/api/post';
 import PostCard from './PostCard';
 
 type Props = {

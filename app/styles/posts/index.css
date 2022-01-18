@@ -76,6 +76,30 @@
     cursor: pointer;
 }
 
+.posts__card .card-status {
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 10px;
+    display: flex;
+    column-gap: 0.5rem;
+}
+
+.posts__card .draft {
+    border: 1px solid #1f2028;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: yellow;
+}
+
+.posts__card .featured {
+    border: 1px solid #1f2028;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgb(128, 255, 0);
+}
+
 .posts__card:hover .posts__card-image img {
     border: 2px solid #4b96ff;
 }

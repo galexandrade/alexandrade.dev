@@ -1,0 +1,19 @@
+form {
+    row-gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.save-button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    width: 300px;
+}
+
+.cancel-button {
+    margin-left: 40px;
+}
+
+textarea {
+    width: 100%;
+}

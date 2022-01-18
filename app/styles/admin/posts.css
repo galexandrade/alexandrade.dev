@@ -1,0 +1,36 @@
+header {
+    display: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    column-gap: 2rem;
+}
+
+nav ul li {
+    padding: 0.5rem;
+}
+
+nav ul li:last-child {
+    align-self: flex-end;
+}
+
+h1 a {
+    float: right;
+}
+
+.logout-link {
+    background: none;
+    border: none;
+    color: var(--color-links);
+    cursor: pointer;
+    font-size: 1em;
+}
