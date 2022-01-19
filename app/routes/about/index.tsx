@@ -2,7 +2,7 @@ import { useLoaderData } from 'remix';
 import type { LoaderFunction } from 'remix';
 import type { LinksFunction, MetaFunction } from 'remix';
 import stylesUrl from '~/styles/posts/view-post.css';
-import { getAboutContent } from '~/api/meta';
+import { getAboutContent } from '~/api/profile';
 
 export let links: LinksFunction = () => {
     return [{ rel: 'stylesheet', href: stylesUrl }];
@@ -21,12 +21,12 @@ export let meta: MetaFunction = () => {
 };
 
 export default function About() {
-    const post = useLoaderData();
+    const about = useLoaderData();
     return (
         <div className="view-post">
             <div
                 className="view-post__content"
-                dangerouslySetInnerHTML={{ __html: post.html }}
+                dangerouslySetInnerHTML={{ __html: about.html }}
             />
         </div>
     );
