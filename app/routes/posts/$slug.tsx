@@ -6,6 +6,7 @@ import invariant from 'tiny-invariant';
 import stylesUrl from '~/styles/posts/view-post.css';
 import PostAuthor from '~/components/PostAuthor';
 import IconArrowLeft from '~/components/IconArrowLeft';
+import SubscribeForm from '~/components/SubscribeForm';
 
 export let links: LinksFunction = () => {
     return [{ rel: 'stylesheet', href: stylesUrl }];
@@ -17,10 +18,10 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 // https://remix.run/api/conventions#meta
-export let meta: MetaFunction = () => {
+export let meta: MetaFunction = ({ data }) => {
     return {
-        title: 'The Alex P. Andrade blog',
-        description: 'The Alex P. Andrade blog',
+        title: data.title,
+        description: data.description,
     };
 };
 
@@ -42,6 +43,7 @@ export default function PostSlug() {
                 className="view-post__content"
                 dangerouslySetInnerHTML={{ __html: post.html }}
             />
+            <SubscribeForm />
             <PostAuthor />
         </div>
     );

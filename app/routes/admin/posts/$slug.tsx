@@ -1,4 +1,10 @@
-import { ActionFunction, Link, redirect, useLoaderData } from 'remix';
+import {
+    ActionFunction,
+    Link,
+    redirect,
+    useLoaderData,
+    useParams,
+} from 'remix';
 import type { LoaderFunction, MetaFunction } from 'remix';
 import { useActionData, json } from 'remix';
 import type { LinksFunction } from 'remix';
@@ -42,6 +48,7 @@ export const action: ActionFunction = async ({ request, params }) => {
 
     const form = await request.formData();
     const title = form.get('title');
+    const description = form.get('description');
     const image = form.get('image');
     const readingtime = form.get('readingtime');
     const date = form.get('date');
@@ -49,7 +56,15 @@ export const action: ActionFunction = async ({ request, params }) => {
     const draft = form.get('draft');
     const content = form.get('content');
 
-    if (!title || !image || !readingtime || !featured || !date || !content) {
+    if (
+        !title ||
+        !description ||
+        !image ||
+        !readingtime ||
+        !featured ||
+        !date ||
+        !content
+    ) {
         return badRequest({
             formError: `Form not submitted correctly.`,
         });
@@ -57,6 +72,7 @@ export const action: ActionFunction = async ({ request, params }) => {
 
     const newPost = {
         title,
+        description,
         image,
         readingtime,
         date,
@@ -67,7 +83,7 @@ export const action: ActionFunction = async ({ request, params }) => {
 
     await savePost(params.slug, newPost);
 
-    return redirect('./');
+    return null;
 };
 type ActionData = {
     formError?: string;
@@ -75,6 +91,7 @@ type ActionData = {
 
 export default function PostSlug() {
     const post = useLoaderData();
+    const params = useParams();
     const actionData = useActionData<ActionData>();
     return (
         <AdminLayout>
@@ -87,6 +104,15 @@ export default function PostSlug() {
                         id="title-input"
                         name="title"
                         defaultValue={post.title}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="description-input">Description</label>
+                    <input
+                        type="text"
+                        id="description-input"
+                        name="description"
+                        defaultValue={post.description}
                     />
                 </div>
                 <div>
@@ -151,6 +177,13 @@ export default function PostSlug() {
                     <button className="save-button">Save</button>
                     <a href="./" className="cancel-button">
                         Cancel
+                    </a>
+                    <a
+                        href={`../../posts/${params.slug}`}
+                        className="cancel-button"
+                        target="_blank"
+                    >
+                        See preview
                     </a>
                 </div>
             </form>

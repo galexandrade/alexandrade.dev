@@ -1,20 +1,13 @@
 import invariant from 'tiny-invariant';
 import { marked } from 'marked';
 
-import {
-    collection,
-    getDocs,
-    doc,
-    getDoc,
-    setDoc,
-    query,
-    where,
-} from 'firebase/firestore';
+import { collection, getDocs, doc, getDoc, setDoc } from 'firebase/firestore';
 import database from './database';
 
 export type Post = {
     slug: string;
     title: string;
+    description: string;
     image: string;
     featured: boolean;
     draft: boolean;
@@ -24,6 +17,7 @@ export type Post = {
 
 export type PostMarkdownAttributes = {
     title: string;
+    description: string;
     image: string;
     featured: boolean;
     draft: boolean;
@@ -75,6 +69,7 @@ export async function getPost(slug: string) {
         slug,
         html,
         title: data.title,
+        description: data.description,
         date: data.date,
         readingtime: data.readingtime,
     };

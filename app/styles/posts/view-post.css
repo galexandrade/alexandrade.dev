@@ -81,7 +81,7 @@ blockquote {
     border-top: 3px solid var(--color-background-alt);
     display: flex;
     padding-top: 2rem;
-    margin-top: 8rem;
+    margin-top: 4rem;
 }
 
 .post-author h2 {
@@ -92,6 +92,7 @@ blockquote {
     max-width: 250px;
     height: 250px;
     object-fit: cover;
+    object-position: 70% 50%;
 }
 
 .post-author__info {
@@ -104,6 +105,66 @@ blockquote {
     margin-top: 2rem;
 }
 
+.subscribe-form {
+    margin-top: 3rem;
+    display: flex;
+    border: 1px solid var(--color-border);
+    box-shadow: rgb(210 214 220 / 50%) 0px 2px 15px 0px;
+}
+
+.subscribe-form__info {
+    padding: 2.5rem 2rem;
+    background-color: rgb(249, 250, 251);
+    display: flex;
+    flex-direction: column;
+}
+
+.subscribe-form__info img {
+    width: 50px;
+    height: 50px;
+}
+
+.subscribe-form__form {
+    min-width: 300px;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    flex: 1;
+}
+
+.subscribe-form__form input {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: var(--color-foreground-alt);
+    height: calc(1ch + 2em);
+}
+
+.subscribe-form__form input[aria-invalid='true'] {
+    color: hsl(356, 100%, 71%);
+    border: 1px solid;
+}
+
+.subscribe-form__form button {
+    height: calc(2ch + 2em);
+    background-color: var(--color-foreground);
+    color: var(--color-background-alt);
+    max-width: 250px;
+    font-size: 1rem;
+}
+
+.subscribe-form__form span.subscribe-form__form-error {
+    color: hsl(356, 100%, 71%);
+}
+
+.subscribe-form__form span {
+    color: var(--color-foreground);
+}
+
 @media screen and (max-width: 768px) {
     .view-post {
         padding: 0;
@@ -111,5 +172,39 @@ blockquote {
     }
     .view-post > h1 {
         padding-top: 0;
+    }
+    .post-author__image img {
+        max-width: 150px;
+    }
+    .subscribe-form {
+        flex-direction: column;
+    }
+    .subscribe-form__info {
+        padding-bottom: 0.5rem;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .subscribe-form__info img {
+        margin: 0 auto;
+    }
+    .subscribe-form__form {
+        padding-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .post-author {
+        padding-top: 3.5rem;
+    }
+
+    .post-author__image img {
+        max-width: 150px;
+    }
+
+    .post-author h2 {
+        position: absolute;
+        margin-left: -180px;
+        margin-top: -40px;
     }
 }
