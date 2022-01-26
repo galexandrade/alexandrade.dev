@@ -36,6 +36,7 @@ export const action: ActionFunction = async ({ request }) => {
 
     const form = await request.formData();
     const title = form.get('title');
+    const description = form.get('description');
     const path = form.get('path');
     const image = form.get('image');
     const readingtime = form.get('readingtime');
@@ -46,6 +47,7 @@ export const action: ActionFunction = async ({ request }) => {
     if (
         !path ||
         !title ||
+        !description ||
         !image ||
         !readingtime ||
         !featured ||
@@ -59,6 +61,7 @@ export const action: ActionFunction = async ({ request }) => {
 
     const newPost = {
         title,
+        description,
         image,
         readingtime,
         date,
@@ -85,6 +88,14 @@ export default function PostSlug() {
                 <div>
                     <label htmlFor="title-input">Title</label>
                     <input type="text" id="title-input" name="title" />
+                </div>
+                <div>
+                    <label htmlFor="description-input">Description</label>
+                    <input
+                        type="text"
+                        id="description-input"
+                        name="description"
+                    />
                 </div>
                 <div>
                     <label htmlFor="path-input">Path</label>

@@ -65,6 +65,16 @@ hr {
     margin-bottom: 2rem;
 }
 
+code {
+    font-weight: 600;
+    font-size: 0.875em;
+}
+
+code::before,
+code::after {
+    content: '\`';
+}
+
 input:where([type='text']),
 input:where([type='search']) {
     display: block;
