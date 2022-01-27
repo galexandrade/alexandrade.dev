@@ -9,13 +9,14 @@ export default function PostAuthor() {
             <div className="post-author__info">
                 <h2>Written by Alex P. Andrade</h2>
                 <span>
-                    Alex Andrade is a senior frontend software engineer and
-                    father of two girls. He's is passionated about the frontend
-                    eco-system: Javascript, React, CSS, Jest, Cypress. His
-                    mission is to make the world a beter place to live through
-                    high quality code.
+                    Alex Andrade is a Senior Frontend Software Engineer and
+                    father of two lovely girls. He's is passionated about the
+                    frontend eco-system: Javascript, React, CSS, Jest, Cypress.
+                    His mission is to make people's live better, building
+                    performant and easy to use applications with high quality
+                    code.
                 </span>
-                <Link to="/about">Lean more about me</Link>
+                <Link to="/about">Lean more about.</Link>
             </div>
         </div>
     );

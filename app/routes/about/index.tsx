@@ -16,7 +16,8 @@ export const loader: LoaderFunction = async () => {
 export let meta: MetaFunction = () => {
     return {
         title: 'About Alex P. Andrade',
-        description: 'About Alex P. Andrade',
+        description:
+            'I write about the things I learn on my day to day as a Frontend Engineer. I write about React, HTML, CSS, GraphQL, testing, and more.',
     };
 };
 

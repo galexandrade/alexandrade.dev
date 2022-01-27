@@ -114,7 +114,7 @@ blockquote {
 
 .subscribe-form__info {
     padding: 2.5rem 2rem;
-    background-color: rgb(249, 250, 251);
+    background-color: var(--color-background-alt-2);
     display: flex;
     flex-direction: column;
 }
