@@ -4,6 +4,10 @@ form {
     flex-direction: column;
 }
 
+form input {
+    color: black;
+}
+
 .save-button {
     padding: 0.5rem 1rem;
     cursor: pointer;

@@ -22,6 +22,7 @@ export let meta: MetaFunction = ({ data }) => {
     return {
         title: data.title,
         description: data.description,
+        image: data.image,
     };
 };
 
