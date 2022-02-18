@@ -23,6 +23,19 @@ export let meta: MetaFunction = ({ data }) => {
         title: data.title,
         description: data.description,
         image: data.image,
+        // Twitter Card
+        'twitter:card': 'summary_large_image',
+        'twitter:title': data.title,
+        'twitter:description': data.description,
+        'twitter:url': 'https://alexandrade.dev/posts/' + data.slug,
+        'twitter:image:src': data.image,
+
+        // Open Graph
+        'og:site_name': "Alex Andrade' Blog",
+        'og:title': data.title,
+        'og:description': data.description,
+        'og:image': data.image,
+        'og:url': 'https://alexandrade.dev/posts/' + data.slug,
     };
 };
 
