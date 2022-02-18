@@ -31,7 +31,7 @@ export let meta: MetaFunction = ({ data }) => {
         'twitter:image:src': data.image,
 
         // Open Graph
-        'og:site_name': "Alex Andrade' Blog",
+        'og:site_name': "Alex Andrade's Blog",
         'og:title': data.title,
         'og:description': data.description,
         'og:image': data.image,
