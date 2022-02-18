@@ -72,6 +72,7 @@ export async function getPost(slug: string) {
         description: data.description,
         date: data.date,
         readingtime: data.readingtime,
+        image: data.image,
     };
 }
 
